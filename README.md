@@ -11,5 +11,9 @@
 **Step 9**: Enjoy... Well, probably not really. It rarely works the first time. You have to figure out what went wrong and wether or not that's because of the deployment or if it's a normal bug. Normal bugs should be first fixed locally. Common deployment bugs are
     * A. Double backslashes in your api endpoints, for example your-herokuapp-.com//login. Solution: fix your env file and build again. Copy your build - again- and push the changes to Heroku.
     * B. Forgetting to allow access from anywhere on MongoDB Atlas or using the wrong connection string. Solution: configure you DB as described in step 2 and make sure you are not pointing to the test DB, but to the DB you created yourself. Also, don't use a connection string with SRV in it (choose another version listed on Atlas). Update your backend env vars on Heroku and restart your app from heroku. You don't have to rebuild.
+    * C. You have forgotten to install the dotenv package on the server. Solution: install and configure it. https://www.npmjs.com/package/dotenv
 
 If you want to make changes to your React source code and you want to deploy them, you always have to create a new build and copy that build to your static directory.
+
+## Note
+I have checked in all my .env files for didactical purposes. I would like you to see what's going on. However, .env files should normally not be checked in.  
